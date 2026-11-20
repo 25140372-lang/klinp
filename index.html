@@ -1,0 +1,741 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KINP | Jabones biodegradables</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --verde: #435b37;
+  --verde-oscuro: #263b29;
+  --verde-claro: #dfe7d5;
+  --crema: #faf7ef;
+  --cafe: #754a2d;
+  --texto: #283129;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--crema);
+  color: var(--texto);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+}
+
+header {
+  background: var(--crema);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #e5e0d5;
+}
+
+nav {
+  max-width: 1150px;
+  margin: auto;
+  padding: 12px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--verde-oscuro);
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.LOGO KLINP img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--verde-oscuro);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--cafe);
+}
+
+.boton {
+  display: inline-block;
+  background: var(--verde);
+  color: white;
+  padding: 12px 23px;
+  border-radius: 30px;
+  text-decoration: none;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.boton:hover {
+  background: var(--verde-oscuro);
+  transform: translateY(-2px);
+}
+
+.hero {
+  max-width: 1150px;
+  margin: auto;
+  padding: 75px 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.etiqueta {
+  color: var(--cafe);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  color: var(--verde-oscuro);
+  font-size: clamp(40px, 5vw, 65px);
+  line-height: 1.15;
+  margin: 15px 0;
+}
+
+.hero h1 span {
+  color: var(--cafe);
+}
+
+.hero p {
+  color: #687166;
+  margin-bottom: 25px;
+}
+
+.hero-imagen {
+  background: var(--verde-claro);
+  border-radius: 45% 45% 20px 20px;
+  padding: 30px;
+  text-align: center;
+}
+
+.hero-imagen img {
+  width: 100%;
+  max-width: 390px;
+  mix-blend-mode: multiply;
+}
+
+.frase {
+  background: var(--verde-oscuro);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  letter-spacing: 1px;
+}
+
+section {
+  padding: 75px 5%;
+  scroll-margin-top: 85px;
+}
+
+.contenedor {
+  max-width: 1150px;
+  margin: auto;
+}
+
+.encabezado {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.encabezado h2 {
+  font-size: clamp(30px, 4vw, 45px);
+  color: var(--verde-oscuro);
+  margin: 10px 0;
+}
+
+.encabezado p {
+  color: #687166;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.tarjeta {
+  background: #fffdf8;
+  border: 1px solid #e8e0d3;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px #263b2910;
+  transition: .3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px #263b2920;
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.tarjeta-contenido {
+  padding: 24px;
+}
+
+.etiqueta-producto {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.tarjeta h3 {
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: var(--verde-oscuro);
+}
+
+.tarjeta p {
+  color: #687166;
+  font-size: 14px;
+}
+
+.tarjeta details {
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #e8e0d3;
+  font-size: 14px;
+}
+
+.tarjeta summary {
+  color: var(--verde);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tarjeta details p {
+  margin-top: 10px;
+}
+
+.vino {
+  height: 280px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: white;
+  background: linear-gradient(145deg, #e7d8c7, #783c3a);
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+}
+
+.nota {
+  margin-top: 22px;
+  color: #74786e;
+  font-size: 13px;
+}
+
+.nosotros {
+  background: var(--verde-oscuro);
+  color: #f9f5e9;
+}
+
+.nosotros h2 {
+  font-size: clamp(32px, 4vw, 45px);
+  margin: 12px 0 20px;
+}
+
+.nosotros p {
+  color: #dce4d4;
+}
+
+.dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.mision {
+  padding: 30px;
+  border: 1px solid #ffffff30;
+  background: #ffffff0b;
+  border-radius: 20px;
+}
+
+.mision h3 {
+  color: #e7d7b9;
+  margin-bottom: 8px;
+}
+
+.mision p {
+  margin-bottom: 20px;
+}
+
+.proceso {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.paso {
+  padding: 22px;
+  border-radius: 17px;
+  border: 1px solid #e8e0d3;
+  background: white;
+}
+
+.numero {
+  background: var(--verde-claro);
+  color: var(--verde-oscuro);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.paso h3 {
+  margin-bottom: 8px;
+  color: var(--verde-oscuro);
+}
+
+.paso p {
+  color: #687166;
+  font-size: 14px;
+}
+
+.ediciones {
+  background: #f0e4d2;
+}
+
+.lista-ediciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.edicion {
+  background: var(--crema);
+  border-radius: 15px;
+  padding: 18px;
+}
+
+.edicion strong {
+  display: block;
+  color: var(--verde-oscuro);
+  margin-bottom: 5px;
+}
+
+.contacto {
+  text-align: center;
+  background: var(--verde-claro);
+}
+
+.contacto h2 {
+  font-size: clamp(30px, 4vw, 45px);
+  color: var(--verde-oscuro);
+  margin: 12px 0;
+}
+
+.contacto p {
+  color: #687166;
+  margin: 10px auto;
+  max-width: 650px;
+}
+
+footer {
+  background: #1e3022;
+  color: white;
+  text-align: center;
+  padding: 28px 5%;
+  font-size: 14px;
+}
+
+footer p {
+  margin: 5px;
+}
+
+@media (max-width: 800px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav ul {
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .hero,
+  .dos-columnas {
+    grid-template-columns: 1fr;
+  }
+
+  .productos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proceso {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  nav {
+    justify-content: center;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .hero {
+    padding-top: 45px;
+  }
+
+  section {
+    padding: 55px 5%;
+  }
+
+  .productos,
+  .proceso,
+  .lista-ediciones {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta img,
+  .vino {
+    height: 300px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="#inicio">
+      <img src="logo-kinp.png" alt="Logotipo de KINP">
+      KINP
+    </a>
+
+    <ul>
+      <li><a href="#productos">Jabones</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#ediciones">Ediciones especiales</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div>
+      <div class="etiqueta">Cuidado inspirado en la naturaleza</div>
+      <h1>Lo natural se siente. <span>Lo consciente transforma.</span></h1>
+      <p>
+        En KINP creemos que cuidar de nosotros también puede ser
+        una oportunidad para cuidar nuestro entorno. Creamos
+        propuestas de jabones inspiradas en la naturaleza,
+        con presentaciones originales y ediciones especiales.
+      </p>
+      <a class="boton" href="#productos">Descubre nuestros jabones</a>
+    </div>
+
+    <div class="hero-imagen">
+      <img src="logo-kinp.png" alt="KINP, jabones biodegradables">
+    </div>
+  </section>
+
+  <div class="frase">
+    Inspiración botánica · Creatividad · Consumo consciente
+  </div>
+
+  <section id="productos">
+    <div class="contenedor">
+      <div class="encabezado">
+        <div class="etiqueta">Nuestra colección</div>
+        <h2>Jabones con una historia que contar</h2>
+        <p>
+          Descubre nuestras presentaciones inspiradas en aromas,
+          ingredientes y elementos de la naturaleza.
+        </p>
+      </div>
+
+      <div class="productos">
+
+        <article class="tarjeta">
+          <img src="jabon-chocolate.jpg" alt="Jabón de chocolate KINP">
+          <div class="tarjeta-contenido">
+            <span class="etiqueta-producto">Edición especial</span>
+            <h3>Chocolate</h3>
+            <p>
+              Una presentación cálida inspirada en el cacao,
+              sus tonos tierra y sus aromas dulces.
+            </p>
+            <details>
+              <summary>Conoce su inspiración</summary>
+              <p>
+                Una posible fórmula podría incorporar cacao
+                cosmético en una base de jabón adecuada para
+                la piel. Los ingredientes definitivos dependerán
+                de la receta validada por KINP.
+              </p>
+            </details>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <img src="jabon-cempasuchil.jpg" alt="Jabón de cempasúchil KINP">
+          <div class="tarjeta-contenido">
+            <span class="etiqueta-producto">Edición de temporada</span>
+            <h3>Cempasúchil</h3>
+            <p>
+              Inspirado en el color naranja de esta flor mexicana
+              y en la riqueza de nuestras tradiciones.
+            </p>
+            <details>
+              <summary>Conoce su inspiración</summary>
+              <p>
+                Podría desarrollarse con una base de jabón
+                cosmética y un ingrediente de cempasúchil
+                compatible con el uso cosmético, tras verificar
+                su calidad y seguridad.
+              </p>
+            </details>
+          </div>
+        </article>
+
+        <article class="tarjeta">
+          <div class="vino">
+            <div>✦<br>Jabón de vino<br><small>Edición especial</small></div>
+          </div>
+          <div class="tarjeta-contenido">
+            <span class="etiqueta-producto">Colección especial</span>
+            <h3>Vino</h3>
+            <p>
+              Una presentación elegante de tonos rojizos,
+              pensada para una colección limitada o para regalar.
+            </p>
+            <details>
+              <summary>Conoce su inspiración</summary>
+              <p>
+                La fórmula podría explorar ingredientes cosméticos
+                derivados de la uva, siempre que sean compatibles
+                y seguros para la preparación del jabón.
+              </p>
+            </details>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="nota">
+        Las descripciones de ingredientes son propuestas y no
+        fórmulas confirmadas. Antes de vender, deben verificarse
+        la receta, el etiquetado y la seguridad de cada producto.
+      </p>
+    </div>
+  </section>
+
+  <section class="nosotros" id="nosotros">
+    <div class="contenedor dos-columnas">
+      <div>
+        <div class="etiqueta" style="color:#e7d7b9">Nuestra esencia</div>
+        <h2>Somos KINP, cuidado personal con conciencia ambiental</h2>
+        <p>
+          Somos una propuesta de jabones biodegradables que busca
+          unir el cuidado cotidiano, la creatividad y el respeto
+          por nuestro entorno. Queremos fomentar decisiones de
+          consumo más conscientes y dar importancia a los materiales
+          que utilizamos y a los residuos que generamos.
+        </p>
+      </div>
+
+      <div class="mision">
+        <h3>Nuestra misión</h3>
+        <p>
+          Crear propuestas de jabones atractivas y responsables,
+          promoviendo hábitos de cuidado personal y decisiones
+          de consumo más conscientes.
+        </p>
+
+        <h3>Nuestra visión</h3>
+        <p>
+          Ser una marca reconocida por su creatividad,
+          compromiso ambiental y mejora continua.
+        </p>
+
+        <h3>Nuestros valores</h3>
+        <p>
+          Responsabilidad, creatividad, respeto por la naturaleza,
+          honestidad y compromiso con nuestros clientes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso">
+    <div class="contenedor">
+      <div class="encabezado">
+        <div class="etiqueta">De la idea al producto</div>
+        <h2>¿Cómo desarrollamos nuestros jabones?</h2>
+        <p>
+          Cada producto debe elaborarse siguiendo una fórmula
+          definida, buenas prácticas y medidas de seguridad.
+        </p>
+      </div>
+
+      <div class="proceso">
+        <article class="paso">
+          <div class="numero">01</div>
+          <h3>Seleccionamos</h3>
+          <p>
+            Investigamos materias primas, su procedencia
+            y su compatibilidad para uso cosmético.
+          </p>
+        </article>
+
+        <article class="paso">
+          <div class="numero">02</div>
+          <h3>Formulamos</h3>
+          <p>
+            Definimos una receta con cantidades precisas
+            y procedimientos seguros.
+          </p>
+        </article>
+
+        <article class="paso">
+          <div class="numero">03</div>
+          <h3>Evaluamos</h3>
+          <p>
+            Revisamos calidad, estabilidad, etiquetado
+            y seguridad antes de ofrecer el producto.
+          </p>
+        </article>
+
+        <article class="paso">
+          <div class="numero">04</div>
+          <h3>Presentamos</h3>
+          <p>
+            Elegimos un empaque apropiado e informamos
+            claramente sobre los ingredientes.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ediciones" id="ediciones">
+    <div class="contenedor dos-columnas">
+      <div>
+        <div class="etiqueta">Colecciones que cambian</div>
+        <h2 style="font-size:42px;color:var(--verde-oscuro);margin:12px 0">
+          Ediciones especiales para cada temporada
+        </h2>
+        <p>
+          Además de nuestra presentación de vino, exploramos
+          propuestas inspiradas en ingredientes, aromas,
+          colores y celebraciones. Cada colección puede tener
+          una identidad propia.
+        </p>
+      </div>
+
+      <div class="lista-ediciones">
+        <div class="edicion">
+          <strong>Chocolate</strong>
+          Inspiración cálida y dulce.
+        </div>
+        <div class="edicion">
+          <strong>Cempasúchil</strong>
+          Inspiración floral mexicana.
+        </div>
+        <div class="edicion">
+          <strong>Vino</strong>
+          Presentación elegante.
+        </div>
+        <div class="edicion">
+          <strong>Próximamente</strong>
+          Nuevas ideas de temporada.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="contenedor">
+      <div class="etiqueta">Estamos para escucharte</div>
+      <h2>Conoce más de KINP</h2>
+      <p>
+        ¿Quieres conocer nuestras presentaciones, consultar
+        ingredientes o compartir una idea para una nueva edición?
+        Nos encantará saber de ti.
+      </p>
+      <a class="boton" href="mailto:TU-CORREO@EJEMPLO.COM?subject=Informacion%20sobre%20KINP">
+        Escríbenos
+      </a>
+      <p class="nota">
+        Recuerda sustituir el correo de ejemplo por el correo
+        oficial de tu empresa.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><strong>KINP · Jabones biodegradables</strong></p>
+  <p>Inspiración natural, creatividad y consumo consciente.</p>
+  <p>© <span id="anio"></span> KINP. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+  document.getElementById("anio").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
